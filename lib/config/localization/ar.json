@@ -1,0 +1,81 @@
+{
+    "name": "الرعاية الطبية الطارئة",
+    "auth": {
+        "required": {
+            "email": "البريد الإلكتروني مطلوب",
+            "password": "كلمة المرور مطلوبة",
+            "name": "الاسم مطلوب",
+            "phone": "الهاتف مطلوب",
+            "confirm_password": "تأكيد كلمة المرور مطلوب"
+        },
+        "invalid": {
+            "email_valid": "الرجاء إدخال عنوان بريد إلكتروني صالح",
+            "password_length": "كلمة المرور على الأقل 8 أحرف",
+            "password_not_match": "كلمة المرور غير متطابقة",
+            "phone_length": "الرجاء إدخال رقم هاتف صالح",
+            "name_length": "الرجاء إدخال اسم صالح"
+        }
+    },
+    "sign_in": {
+        "title": "مرحبًا مجددًا",
+        "subtitle": "تسجيل الدخول للوصول إلى حسابك",
+        "email": "أدخل بريدك الإلكتروني",
+        "password": "كلمة المرور",
+        "forgot_password": "نسيت كلمة المرور؟",
+        "button": "تسجيل الدخول",
+        "new_member": "عضو جديد؟ ",
+        "register": "سجل الآن",
+        "sign_in_with": "تسجيل الدخول بواسطة",
+        "sign_in_with_google": "جوجل"
+    },
+    "sign_up": {
+        "title": "ابدأ",
+        "subtitle": "من خلال إنشاء حساب مجاني.",
+        "name":"أدخل اسمك",
+        "email": "أدخل بريدك الإلكتروني",
+        "phone": "أدخل رقم الهاتف",
+        "password": "أدخل كلمة المرور",
+        "confirm_password": "تأكيد كلمة المرور",
+        "button": "إنشاء",
+        "already_member": "عضو بالفعل؟ ",
+        "sign_in": "تسجيل الدخول",
+        "sign_up_with": "التسجيل بواسطة",
+        "sign_up_with_google": "جوجل",
+        "search": "بحث البلد"
+    },
+    "main_shell": {
+        "home": "الرئيسية",
+        "profile": "الشخصي",
+        "settings": "الإعدادات",
+        "logout": "تسجيل الخروج"
+    },
+    "register_vehicle": {
+        "title": "سجل مركبتك",
+        "subtitle": "الرجاء إدخال تفاصيل مركبتك",
+        "skip": "تخطى",
+        "dnt_show":"لا تظهر مرة أخرى",
+        "vehicle_owner_name":"أدخل اسم مالك المركبة",
+        "vehicle_number": "أدخل رقم المركبة",
+        "vehicle_color": "أدخل لون المركبة",
+        "button": "تسجيل المركبة",
+        "note_title": "ملاحظة: ",
+        "note": "الرجاء إدخال تفاصيل مركبتك بشكل صحيح",
+        
+        "vehicle_rc": "أدخل رقم مركبة RC",
+        "vehicle_model": "نموذج المركبة",
+        "required" :{
+            "vehicle_owner_name": "اسم مالك المركبة مطلوب",
+            "vehicle_number": "رقم المركبة مطلوب",
+            "vehicle_color": "لون المركبة مطلوب",
+            "vehicle_rc": "رقم مركبة RC مطلوب",
+            "vehicle_model": "نموذج المركبة مطلوب"
+        },
+        "invalid": {
+            "vehicle_owner_name": "الرجاء إدخال اسم صحيح",
+            "vehicle_number": "الرجاء إدخال رقم مركبة صحيح",
+            "vehicle_color": "الرجاء إدخال لون صحيح",
+            "vehicle_rc": "الرجاء إدخال رقم RC صحيح",
+            "vehicle_model": "الرجاء إدخال نموذج صحيح"
+        }
+    }
+}

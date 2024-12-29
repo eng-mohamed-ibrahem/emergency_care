@@ -1,0 +1,76 @@
+{
+    "name": "Emergency Care",
+    "auth": {
+        "required": {
+            "email": "Email is required",
+            "password": "Password is required",
+            "name": "Name is required",
+            "phone": "Phone is required",
+            "confirm_password": "Confirm Password is required"
+        },
+        "invalid": {
+            "email_valid": "Please enter a valid email address",
+            "password_length": "Password at least 8 characters",
+            "password_not_match": "Password does not match",
+            "phone_length": "Please enter a valid phone number",
+            "name_length": "Please enter a valid name"
+        }
+    },
+    "sign_in": {
+        "title": "Welcome Back",
+        "subtitle": "Sign in to access your account",
+        "email": "Enter your email",
+        "password": "Password",
+        "forgot_password": "Forgot Password?",
+        "button": "Sign in",
+        "new_member": "New Member? ",
+        "register": "Register Now",
+        "sign_in_with": "Sign in With",
+        "sign_in_with_google": "Google"
+    },
+    "sign_up": {
+        "title": "Get Started",
+        "subtitle": "By creating a free account.",
+        "name":"Enter your name",
+        "email": "Enter your E-mail",
+        "phone": "Enter Phone Number",
+        "password": "Enter Password",
+        "confirm_password": "Confirm Password",
+        "button": "Create",
+        "already_member": "Already a Member? ",
+        "sign_in": "Log in",
+        "sign_up_with": "Sign up With",
+        "sign_up_with_google": "Google",
+        "search": "Search Country"
+    },
+    "register_vehicle": {
+        "title": "Register your Vehicle ",
+        "subtitle": "Please enter your vehicle details",
+        "skip": "Skip",
+        "dnt_show":"Don't Show Again",
+        "vehicle_owner_name":"Enter Vehicle Owner Name",
+        "vehicle_number": "Enter Vehicle Number",
+        "vehicle_color": "Enter Vehicle Color",
+        "button": "Register Vehicle",
+        "note_title": "Note: ",
+        "note": "Please enter your vehicle details correctly",
+        
+        "vehicle_rc": "Enter Vehicle RC Number",
+        "vehicle_model": "Vehicle Model",
+
+        "required" :{
+            "vehicle_owner_name": "Vehicle Owner Name is required",
+            "vehicle_number": "Vehicle Number is required",
+            "vehicle_color": "Vehicle Color is required",
+            "vehicle_rc": "Vehicle RC Number is required",
+            "vehicle_model": "Vehicle Model is required"
+        },
+        "invalid": {
+            "vehicle_owner_name": "Please enter a valid name",
+            "vehicle_number": "Please enter a valid vehicle number",
+            "vehicle_color": "Please enter a valid color",
+            "vehicle_rc": "Please enter a valid RC number",
+            "vehicle_model": "Please enter a valid model"
+        }
+    }
+}

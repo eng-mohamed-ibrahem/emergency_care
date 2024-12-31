@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:emergeny_care/config/navigation/pages.dart';
-import 'package:emergeny_care/config/navigation/routes.dart';
+import 'package:emergency_care/config/navigation/pages.dart';
+import 'package:emergency_care/config/navigation/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

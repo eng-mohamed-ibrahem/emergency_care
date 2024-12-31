@@ -1,4 +1,4 @@
-import 'package:emergeny_care/core/constants/app_colors.dart';
+import 'package:emergency_care/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {

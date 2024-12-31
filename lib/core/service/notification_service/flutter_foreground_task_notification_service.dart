@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'dart:ui';
 
-import 'package:emergeny_care/core/service/notification_service/notification_background_service_interface.dart';
-import 'package:emergeny_care/core/utils/methods/methods.dart';
+import 'package:emergency_care/core/service/notification_service/notification_background_service_interface.dart';
+import 'package:emergency_care/core/utils/methods/methods.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
 
 // The callback function should always be a top-level or static function.

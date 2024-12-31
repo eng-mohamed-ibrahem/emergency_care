@@ -1,6 +1,6 @@
-import 'package:emergeny_care/config/navigation/routes.dart';
-import 'package:emergeny_care/core/constants/app_images.dart';
-import 'package:emergeny_care/core/utils/methods/methods.dart';
+import 'package:emergency_care/config/navigation/routes.dart';
+import 'package:emergency_care/core/constants/app_images.dart';
+import 'package:emergency_care/core/utils/methods/methods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';

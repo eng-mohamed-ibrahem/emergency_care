@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:emergeny_care/config/navigation/app_navigation.dart';
-import 'package:emergeny_care/config/themes/app_theme.dart';
+import 'package:emergency_care/config/navigation/app_navigation.dart';
+import 'package:emergency_care/config/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

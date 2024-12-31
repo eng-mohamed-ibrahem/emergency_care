@@ -72,5 +72,11 @@
             "vehicle_rc": "Please enter a valid RC number",
             "vehicle_model": "Please enter a valid model"
         }
+    },
+    "home":{
+        "title":"Home",
+        "welcome":"Welcome",
+        "have_emergency":"Having an Emergency?",
+        "hint":"Press the button below\nhelp will arrive soon."
     }
 }

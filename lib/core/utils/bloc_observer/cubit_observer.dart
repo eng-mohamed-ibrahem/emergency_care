@@ -16,7 +16,7 @@ class CubitObserver extends BlocObserver {
     stackLines.retainWhere(
       (element) {
         // to filter the Stacktrace lines to be triggered by Your code
-        return element.contains('package:emergeny_care');
+        return element.contains('package:emergency_care');
       },
     );
     log(stackLines.join('\n'));

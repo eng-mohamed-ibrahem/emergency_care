@@ -1,7 +1,8 @@
-import 'package:emergeny_care/config/navigation/routes.dart';
-import 'package:emergeny_care/config/themes/text_styles.dart';
-import 'package:emergeny_care/core/constants/app_colors.dart';
-import 'package:emergeny_care/core/constants/app_images.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:emergency_care/config/navigation/routes.dart';
+import 'package:emergency_care/config/themes/text_styles.dart';
+import 'package:emergency_care/core/constants/app_colors.dart';
+import 'package:emergency_care/core/constants/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -47,7 +48,7 @@ class _MainShellState extends State<MainShell> {
                     ),
                   ),
                   Text(
-                    'Home',
+                    'home.title'.tr(),
                     style: TextStyles.subtitle.copyWith(
                       color: _handleSelectedColor(0),
                     ),

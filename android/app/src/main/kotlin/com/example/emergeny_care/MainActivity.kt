@@ -1,4 +1,4 @@
-package com.example.emergeny_care
+package com.example.emergency_care
 
 import android.content.Intent
 import android.net.Uri

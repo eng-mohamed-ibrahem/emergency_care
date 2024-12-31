@@ -1,5 +1,5 @@
-import 'package:emergeny_care/config/themes/text_styles.dart';
-import 'package:emergeny_care/core/constants/app_colors.dart';
+import 'package:emergency_care/config/themes/text_styles.dart';
+import 'package:emergency_care/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

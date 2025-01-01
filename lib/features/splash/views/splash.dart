@@ -1,5 +1,5 @@
 import 'package:emergency_care/config/navigation/routes.dart';
-import 'package:emergency_care/core/constants/app_images.dart';
+import 'package:emergency_care/core/constants/assets_manager.dart';
 import 'package:emergency_care/core/utils/methods/methods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -28,7 +28,7 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     FlutterNativeSplash.remove();
     return Image.asset(
-      AppImages.splash,
+      AssetsManager.splash,
       fit: BoxFit.contain,
     );
   }

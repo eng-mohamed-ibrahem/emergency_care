@@ -2,7 +2,7 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/app_colors.dart';
-import 'package:emergency_care/core/constants/app_images.dart';
+import 'package:emergency_care/core/constants/assets_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -36,6 +36,7 @@ class HomeScreen extends StatelessWidget {
                           // color: AppColors.hintTextColor,
                         ),
                       ),
+                      // user name
                       Text(
                         'Mohamed Ibrahem',
                         style: TextStyles.middleTitle.copyWith(
@@ -47,12 +48,7 @@ class HomeScreen extends StatelessWidget {
                   Spacer(),
                   CircleAvatar(
                     radius: 25.r,
-                    backgroundColor: AppColors.hintTextColor,
-                    child: Icon(
-                      Icons.person,
-                      size: 40.r,
-                      color: Colors.white,
-                    ),
+                    backgroundImage: AssetImage(AssetsManager.avatar),
                   ),
                 ],
               ),
@@ -79,9 +75,6 @@ class HomeScreen extends StatelessWidget {
                 fontSize: 18.sp,
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
             Spacer(),
             GestureDetector(
               onTap: () {
@@ -96,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                 child: CircleAvatar(
                   backgroundColor: AppColors.primaryColor,
                   radius: 100.r,
-                  child: SvgPicture.asset(AppImages.handPressed),
+                  child: SvgPicture.asset(AssetsManager.handPressed),
                 ),
               ),
             ),

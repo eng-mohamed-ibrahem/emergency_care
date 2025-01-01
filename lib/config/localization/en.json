@@ -78,5 +78,14 @@
         "welcome":"Welcome",
         "have_emergency":"Having an Emergency?",
         "hint":"Press the button below\nhelp will arrive soon."
+    },
+    "profile":{
+        "title":"Profile",
+        "edit":"Edit profile information",
+        "lang":"Language",
+        "theme":"Theme",
+        "vehicle":"Vehicle Details",
+        "privacy":"Privacy Policy",
+        "logout":"Logout"
     }
 }

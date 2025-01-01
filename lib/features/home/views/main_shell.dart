@@ -2,7 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:emergency_care/config/navigation/routes.dart';
 import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/app_colors.dart';
-import 'package:emergency_care/core/constants/app_images.dart';
+import 'package:emergency_care/core/constants/assets_manager.dart';
+import 'package:emergency_care/core/utils/methods/methods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,6 +21,7 @@ class _MainShellState extends State<MainShell> {
   int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    kDebugPrint("rebuild main shell");
     return Scaffold(
       extendBody: true,
       body: widget.child,
@@ -41,7 +43,7 @@ class _MainShellState extends State<MainShell> {
               icon: Column(
                 children: [
                   SvgPicture.asset(
-                    AppImages.homeSvgImage,
+                    AssetsManager.homeSvgIcon,
                     colorFilter: ColorFilter.mode(
                       _handleSelectedColor(0),
                       BlendMode.srcIn,
@@ -66,14 +68,14 @@ class _MainShellState extends State<MainShell> {
               icon: Column(
                 children: [
                   SvgPicture.asset(
-                    AppImages.profileSvgImage,
+                    AssetsManager.profileSvgIcon,
                     colorFilter: ColorFilter.mode(
                       _handleSelectedColor(2),
                       BlendMode.srcIn,
                     ),
                   ),
                   Text(
-                    'Profile',
+                    'profile.title'.tr(),
                     style: TextStyles.subtitle.copyWith(
                       color: _handleSelectedColor(2),
                     ),

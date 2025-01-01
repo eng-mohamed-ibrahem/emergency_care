@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:emergency_care/config/navigation/routes.dart';
 import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/app_colors.dart';
-import 'package:emergency_care/core/constants/app_images.dart';
+import 'package:emergency_care/core/constants/assets_manager.dart';
 import 'package:emergency_care/core/constants/validators.dart';
 import 'package:emergency_care/core/utils/methods/methods.dart';
 import 'package:emergency_care/features/auth/views/widgets/auth_button.dart';
@@ -53,7 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 RepaintBoundary(
                   child: SvgPicture.asset(
-                    AppImages.loginSvgImage,
+                    AssetsManager.loginSvgImage,
                     width: 370.w,
                     height: 310.h,
                     fit: BoxFit.contain,

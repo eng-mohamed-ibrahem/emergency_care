@@ -80,6 +80,7 @@ flutter:
   assets:
     - lib/config/localization/
     - assets/images/
+    - assets/icons/
     
   
 

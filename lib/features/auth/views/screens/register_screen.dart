@@ -5,8 +5,8 @@ import 'package:emergency_care/core/constants/app_colors.dart';
 import 'package:emergency_care/core/constants/assets_manager.dart';
 import 'package:emergency_care/core/constants/validators.dart';
 import 'package:emergency_care/core/utils/methods/methods.dart';
-import 'package:emergency_care/features/auth/views/widgets/auth_button.dart';
-import 'package:emergency_care/features/auth/views/widgets/input_form_field.dart';
+import 'package:emergency_care/features/auth/views/widgets/main_button.dart';
+import 'package:emergency_care/core/utils/shared/input_form_field.dart';
 import 'package:emergency_care/features/auth/views/widgets/phone_number_field.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -140,7 +140,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(height: 16),
 
                 // Register Button
-                AuthButton(
+                MainButton(
                   text: 'sign_up.button'.tr(),
                   onPressed: () {
                     // Handle register button tap

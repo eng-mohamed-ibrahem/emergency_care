@@ -54,7 +54,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 25,
+              height: 30.h,
             ),
             Text(
               "home.have_emergency".tr(),
@@ -75,7 +75,9 @@ class HomeScreen extends StatelessWidget {
                 fontSize: 18.sp,
               ),
             ),
-            Spacer(),
+            Spacer(
+              flex: 1,
+            ),
             GestureDetector(
               onTap: () {
                 // handle tap send messages to emergenct contacts
@@ -88,12 +90,14 @@ class HomeScreen extends StatelessWidget {
                 curve: Curves.fastOutSlowIn,
                 child: CircleAvatar(
                   backgroundColor: AppColors.primaryColor,
-                  radius: 100.r,
+                  radius: 120.r,
                   child: SvgPicture.asset(AssetsManager.handPressed),
                 ),
               ),
             ),
-            Spacer(),
+            Spacer(
+              flex: 1,
+            ),
           ],
         ),
       ),

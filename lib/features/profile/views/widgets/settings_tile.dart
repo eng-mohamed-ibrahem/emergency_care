@@ -23,7 +23,8 @@ class SettingsTile extends StatelessWidget {
       leading: leadingIcon,
       title: Text(
         title,
-        style: TextStyles.subtitle.copyWith(fontWeight: FontWeight.w600),
+        style: titleStyle ??
+            TextStyles.subtitle.copyWith(fontWeight: FontWeight.w600),
       ),
       trailing: trailing,
       onTap: onTap,

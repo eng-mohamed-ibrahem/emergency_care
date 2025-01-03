@@ -9,24 +9,30 @@ import 'package:intl_phone_field/phone_number.dart';
 
 class PhoneNumberField extends StatelessWidget {
   const PhoneNumberField(
-      {super.key, this.controller, this.onChanged, this.validator});
+      {super.key,
+      this.controller,
+      this.onChanged,
+      this.validator,
+      this.fillColor});
   final TextEditingController? controller;
   final Function(String)? onChanged;
   final String? Function(PhoneNumber?)? validator;
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
     return IntlPhoneField(
       controller: controller,
+      initialValue: controller?.text,
       validator: validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      initialCountryCode: context.locale.countryCode,
+      initialCountryCode: "EG",
       dropdownIconPosition: IconPosition.trailing,
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         hintText: "sign_up.phone".tr(),
         filled: true,
-        fillColor: Color(0xFfC4C4C4).withAlpha(20),
+        fillColor:fillColor?? Color(0xFfC4C4C4).withAlpha(20),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,

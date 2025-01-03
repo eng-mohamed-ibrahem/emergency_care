@@ -2,8 +2,10 @@ import 'dart:io';
 
 import 'package:emergency_care/config/navigation/pages.dart';
 import 'package:emergency_care/config/navigation/routes.dart';
+import 'package:emergency_care/features/home/viewmodel/main_shell_viewmodel/main_shell_viewmodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class AppNavigation {
@@ -48,7 +50,10 @@ class AppNavigation {
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
         builder: (context, state, child) {
-          return MainShell(child: child);
+          return BlocProvider(
+            create: (context) => MainShellViewmodel(),
+            child: MainShell(child: child),
+          );
         },
         routes: [
           GoRoute(
@@ -89,6 +94,18 @@ class AppNavigation {
               state,
               ProfileScreen(),
             ),
+            routes: [
+              GoRoute(
+                path: Routes.editProfile.path,
+                name: Routes.editProfile.name,
+                parentNavigatorKey: _parentNavigatorKey,
+                pageBuilder: (context, state) => pageBuilder(
+                  context,
+                  state,
+                  EditProfileScreen(),
+                ),
+              ),
+            ],
           ),
         ],
       ),

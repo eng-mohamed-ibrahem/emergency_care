@@ -1,12 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:emergency_care/config/navigation/routes.dart';
 import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/app_colors.dart';
 import 'package:emergency_care/core/constants/assets_manager.dart';
+import 'package:emergency_care/features/home/viewmodel/main_shell_viewmodel/main_shell_viewmodel.dart';
 import 'package:emergency_care/features/profile/views/widgets/settings_card.dart';
 import 'package:emergency_care/features/profile/views/widgets/settings_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -81,16 +85,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     leadingIcon:
                         SvgPicture.asset(AssetsManager.profileEditIcon),
                     title: 'profile.edit'.tr(),
-                    onTap: () {},
+                    onTap: () {
+                      context.goNamed(Routes.editProfile.name);
+                    },
                   ),
                   SettingsTile(
                     leadingIcon: SvgPicture.asset(AssetsManager.languageIcon),
                     title: 'profile.lang'.tr(),
                     trailing: TextButton(
                       onPressed: () {
-                        context.locale.languageCode == 'en'
-                            ? context.setLocale(Locale('ar'))
-                            : context.setLocale(Locale('en'));
+                        Locale currentLang = context.locale.languageCode == 'en'
+                            ? Locale('ar')
+                            : Locale('en');
+                        context
+                            .read<MainShellViewmodel>()
+                            .changeLanguage(currentLang);
+
+                        context.setLocale(currentLang);
                       },
                       child: Text(
                         context.locale.languageCode == 'en'
@@ -118,9 +129,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     trailing: TextButton(
                       onPressed: null,
                       child: Text(
-                        'Dark mode',
+                        'profile.mode'.tr(),
                         style: TextStyles.subtitle.copyWith(
-                          color: Colors.blue,
+                          color: Colors.blue.shade200,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -135,11 +146,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     leadingIcon: SvgPicture.asset(AssetsManager.privacyPolicy),
                     title: 'profile.privacy'.tr(),
                   ),
-                ],
-              ),
-              // logout settings card
-              SettingsCard(
-                children: [
                   SettingsTile(
                     leadingIcon: Icon(
                       Icons.logout,
@@ -150,7 +156,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       fontWeight: FontWeight.w600,
                       color: AppColors.primaryColor,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      // handle logout
+                    },
                   ),
                 ],
               ),

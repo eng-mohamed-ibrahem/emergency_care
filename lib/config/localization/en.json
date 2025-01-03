@@ -31,7 +31,7 @@
     "sign_up": {
         "title": "Get Started",
         "subtitle": "By creating a free account.",
-        "name":"Enter your name",
+        "name": "Enter your name",
         "email": "Enter your E-mail",
         "phone": "Enter Phone Number",
         "password": "Enter Password",
@@ -47,18 +47,16 @@
         "title": "Register your Vehicle ",
         "subtitle": "Please enter your vehicle details",
         "skip": "Skip",
-        "dnt_show":"Don't Show Again",
-        "vehicle_owner_name":"Enter Vehicle Owner Name",
+        "dnt_show": "Don't Show Again",
+        "vehicle_owner_name": "Enter Vehicle Owner Name",
         "vehicle_number": "Enter Vehicle Number",
         "vehicle_color": "Enter Vehicle Color",
         "button": "Register Vehicle",
         "note_title": "Note: ",
         "note": "Please enter your vehicle details correctly",
-        
         "vehicle_rc": "Enter Vehicle RC Number",
         "vehicle_model": "Vehicle Model",
-
-        "required" :{
+        "required": {
             "vehicle_owner_name": "Vehicle Owner Name is required",
             "vehicle_number": "Vehicle Number is required",
             "vehicle_color": "Vehicle Color is required",
@@ -73,19 +71,34 @@
             "vehicle_model": "Please enter a valid model"
         }
     },
-    "home":{
-        "title":"Home",
-        "welcome":"Welcome",
-        "have_emergency":"Having an Emergency?",
-        "hint":"Press the button below\nhelp will arrive soon."
+    "home": {
+        "title": "Home",
+        "welcome": "Welcome",
+        "have_emergency": "Having an Emergency?",
+        "hint": "Press the button below\nhelp will arrive soon."
     },
-    "profile":{
-        "title":"Profile",
-        "edit":"Edit profile information",
-        "lang":"Language",
-        "theme":"Theme",
-        "vehicle":"Vehicle Details",
-        "privacy":"Privacy Policy",
-        "logout":"Logout"
+    "profile": {
+        "title": "Profile",
+        "edit": "Edit profile information",
+        "lang": "Language",
+        "theme": "Theme",
+        "mode": "Dark Mode",
+        "vehicle": "Vehicle Details",
+        "privacy": "Privacy Policy",
+        "logout": "Logout"
+    },
+    "edit_profile": {
+        "title": "Edit Profile",
+        "name": "Full Name",
+        "email": "Email",
+        "phone": "Phone",
+        "button": "SUBMIT"
+    },
+    "edit_vehicle": {
+        "title": "Edit Vehicle",
+        "vehicle_owner_name": "Vehicle Owner Name",
+        "vehicle_number": "Vehicle Number",
+        "vehicle_color": "Vehicle Color",
+        "button": "SUBMIT"
     }
 }

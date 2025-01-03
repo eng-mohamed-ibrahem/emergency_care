@@ -4,8 +4,8 @@ import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/app_colors.dart';
 import 'package:emergency_care/core/constants/assets_manager.dart';
 import 'package:emergency_care/core/constants/validators.dart';
-import 'package:emergency_care/features/auth/views/widgets/auth_button.dart';
-import 'package:emergency_care/features/auth/views/widgets/input_form_field.dart';
+import 'package:emergency_care/features/auth/views/widgets/main_button.dart';
+import 'package:emergency_care/core/utils/shared/input_form_field.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -102,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: MediaQuery.sizeOf(context).height * 0.1),
 
                 // Sign in button
-                AuthButton(
+                MainButton(
                   text: 'sign_in.button'.tr(),
                   onPressed: () {
                     // Handle sign in button tap

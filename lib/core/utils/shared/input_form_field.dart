@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class InputFormField extends StatefulWidget {
   final bool isPassword;
-  final String hintText;
+  final String? hintText;
   final Widget? prefixIcon;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
@@ -13,11 +13,12 @@ class InputFormField extends StatefulWidget {
   final FocusNode? focusNode;
   final Function(String)? onChanged;
   final String? Function(String? text)? validator;
+  final Color? fillColor;
 
   const InputFormField({
     super.key,
     this.isPassword = false,
-    required this.hintText,
+     this.hintText,
     this.prefixIcon,
     this.controller,
     this.keyboardType,
@@ -25,6 +26,7 @@ class InputFormField extends StatefulWidget {
     this.focusNode,
     this.onChanged,
     this.validator,
+    this.fillColor,
   });
 
   @override
@@ -49,7 +51,7 @@ class _InputFormState extends State<InputFormField> {
       decoration: InputDecoration(
         hintText: widget.hintText,
         filled: true,
-        fillColor: Color(0xFfC4C4C4).withAlpha(20),
+        fillColor: widget.fillColor ?? Color(0xFfC4C4C4).withAlpha(20),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,

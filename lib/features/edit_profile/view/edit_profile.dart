@@ -1,9 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/validators.dart';
 import 'package:emergency_care/core/utils/methods/methods.dart';
 import 'package:emergency_care/features/auth/views/widgets/main_button.dart';
 import 'package:emergency_care/features/auth/views/widgets/phone_number_field.dart';
-import 'package:emergency_care/features/profile/views/widgets/edit_form_field.dart';
+import 'package:emergency_care/core/utils/shared/edit_form_field.dart';
 import 'package:flutter/material.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -47,7 +48,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       appBar: AppBar(
         title: Text(
           'edit_profile.title'.tr(),
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+          style: TextStyles.middleTitle,
         ),
         backgroundColor: Colors.white,
         elevation: 0,
@@ -70,37 +71,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 validator: Validators.validateEmail,
               ),
               const SizedBox(height: 16),
-              // EditFormField(
-              //   label: 'edit_profile.phone'.tr(),
-              //   content: ValidateWidget<PhoneNumber>(
-              //     validator: (phone) {
-              //       kDebugPrint("validator:----- $phone");
-              //       var isValid = false;
-              //       try {
-              //         isValid = phone!.isValidNumber();
-              //       } catch (e) {
-              //         isValid = false;
-              //       }
-              //       return Validators.validatePhone(
-              //         phone?.number,
-              //         isValid,
-              //       );
-              //     },
-              //     builder: (state) => PhoneNumberField(
-              //       controller: phoneController,
-              //       onChanged: (String value) {
-              //         kDebugPrint("value:----------- $value");
-              //         state.didChange(
-              //           PhoneNumber.fromCompleteNumber(completeNumber: value),
-              //         );
-              //       },
-              //       fillColor: Color(0xffF3F8FF),
-              //     ),
-              //     errorBorderColor: AppColors.primaryColor,
-              //     errorTextStyle: TextStyles.miniTitle.copyWith(
-              //       color: AppColors.primaryColor,
-              //     ),
-
               EditFormField(
                 label: 'edit_profile.phone'.tr(),
                 content: PhoneNumberField(
@@ -109,7 +79,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   fillColor: Color(0xffF3F8FF),
                 ),
               ),
-
               SizedBox(height: MediaQuery.sizeOf(context).height * 0.45),
               MainButton(
                 text: 'edit_profile.button'.tr(),

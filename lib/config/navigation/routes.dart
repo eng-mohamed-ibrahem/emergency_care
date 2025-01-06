@@ -5,6 +5,7 @@ enum Routes {
   home("/home", "Home"),
   profile("/profile", "Profile"),
   editProfile("edit", "Edit_Profile"),
+  editVehcile("vehicle", "Edit_Vehicle"),
   contacts("/contacts", "Contacts"),
 
   /// will be inside the home page

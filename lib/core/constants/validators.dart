@@ -23,10 +23,10 @@ class Validators {
   }
 
   static String? validateName(String? value,
-      {String? requiredMessage, String? invalidMessage}) {
+      {String? requiredMessage, int invalidAfter = 3, String? invalidMessage}) {
     if (value == null || value.isEmpty) {
       return requiredMessage ?? 'auth.required.name'.tr();
-    } else if (value.length < 3) {
+    } else if (value.length < invalidAfter) {
       return invalidMessage ?? 'auth.invalid.name_length'.tr();
     }
     return null;

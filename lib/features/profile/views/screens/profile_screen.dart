@@ -3,7 +3,7 @@ import 'package:emergency_care/config/navigation/routes.dart';
 import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/app_colors.dart';
 import 'package:emergency_care/core/constants/assets_manager.dart';
-import 'package:emergency_care/features/home/viewmodel/main_shell_viewmodel/main_shell_viewmodel.dart';
+import 'package:emergency_care/features/main_shell/viewmodel/main_shell_viewmodel.dart';
 import 'package:emergency_care/features/profile/views/widgets/settings_card.dart';
 import 'package:emergency_care/features/profile/views/widgets/settings_tile.dart';
 import 'package:flutter/material.dart';
@@ -100,7 +100,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         context
                             .read<MainShellViewmodel>()
                             .changeLanguage(currentLang);
-
                         context.setLocale(currentLang);
                       },
                       child: Text(
@@ -122,6 +121,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SettingsTile(
                     leadingIcon: SvgPicture.asset(AssetsManager.vehicleIcon),
                     title: 'profile.vehicle'.tr(),
+                    onTap: () {
+                      context.goNamed(Routes.editVehcile.name);
+                    },
                   ),
                   SettingsTile(
                     leadingIcon: SvgPicture.asset(AssetsManager.themeIcon),

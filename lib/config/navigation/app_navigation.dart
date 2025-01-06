@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:emergency_care/config/navigation/pages.dart';
 import 'package:emergency_care/config/navigation/routes.dart';
-import 'package:emergency_care/features/home/viewmodel/main_shell_viewmodel/main_shell_viewmodel.dart';
+import 'package:emergency_care/features/main_shell/viewmodel/main_shell_viewmodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -104,6 +104,20 @@ class AppNavigation {
                   state,
                   EditProfileScreen(),
                 ),
+              ),
+              GoRoute(
+                path: Routes.editVehcile.path,
+                name: Routes.editVehcile.name,
+                parentNavigatorKey: _parentNavigatorKey,
+                pageBuilder: (context, state) => pageBuilder(
+                  context,
+                  state,
+                  EditVehicleScreen(),
+                ),
+                redirect: (context, state) {
+                  //* redirect to *register vehicle* incase it doesn't register vehicle yet
+                  return null;
+                },
               ),
             ],
           ),

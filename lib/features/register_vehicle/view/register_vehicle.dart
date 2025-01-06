@@ -134,6 +134,7 @@ class _RegisterVehicleState extends State<RegisterVehicle> {
                       text,
                       requiredMessage:
                           'register_vehicle.required.vehicle_number'.tr(),
+                     invalidAfter: 2,
                       invalidMessage:
                           'register_vehicle.invalid.vehicle_number'.tr(),
                     );

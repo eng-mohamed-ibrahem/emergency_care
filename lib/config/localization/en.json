@@ -96,9 +96,9 @@
     },
     "edit_vehicle": {
         "title": "Edit Vehicle",
-        "vehicle_owner_name": "Vehicle Owner Name",
-        "vehicle_number": "Vehicle Number",
-        "vehicle_color": "Vehicle Color",
+        "owner_name": "Vehicle Owner Name",
+        "number": "Vehicle Number",
+        "color": "Vehicle Color",
         "button": "SUBMIT"
     }
 }

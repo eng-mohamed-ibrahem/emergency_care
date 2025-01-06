@@ -4,7 +4,7 @@ import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/app_colors.dart';
 import 'package:emergency_care/core/constants/assets_manager.dart';
 import 'package:emergency_care/core/utils/methods/methods.dart';
-import 'package:emergency_care/features/home/viewmodel/main_shell_viewmodel/main_shell_viewmodel.dart';
+import 'package:emergency_care/features/main_shell/viewmodel/main_shell_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

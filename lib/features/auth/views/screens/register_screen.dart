@@ -106,10 +106,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onChanged: (phone) {
                     kDebugPrint(phone);
                   },
-                  validator: (phone) {
-                    return Validators.validatePhone(
-                        phone!.number, phone.isValidNumber());
-                  },
                 ),
 
                 // Password TextField

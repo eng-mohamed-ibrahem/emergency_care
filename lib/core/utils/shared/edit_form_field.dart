@@ -13,7 +13,7 @@ class EditFormField extends StatelessWidget {
 
   final String label;
   final TextEditingController? controller;
-  final String? Function(String?)? validator;
+  final String? Function(String? text)? validator;
   final Widget? content;
 
   @override

@@ -2,9 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/validators.dart';
 import 'package:emergency_care/core/utils/methods/methods.dart';
+import 'package:emergency_care/core/utils/shared/edit_form_field.dart';
 import 'package:emergency_care/features/auth/views/widgets/main_button.dart';
 import 'package:emergency_care/features/auth/views/widgets/phone_number_field.dart';
-import 'package:emergency_care/core/utils/shared/edit_form_field.dart';
 import 'package:flutter/material.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -75,7 +75,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 label: 'edit_profile.phone'.tr(),
                 content: PhoneNumberField(
                   controller: phoneController,
-                  onChanged: (String value) {},
+                  onChanged: (phone) {},
                   fillColor: Color(0xffF3F8FF),
                 ),
               ),

@@ -97,7 +97,7 @@ class MainShell extends StatelessWidget {
             shape: const CircleBorder(),
           ),
           onPressed: () {
-            context.go(Routes.contacts.path);
+            context.go(Routes.emergencyContacts.path);
             context.read<MainShellViewmodel>().changeSelectedIndex(1);
           },
           icon: const Icon(

@@ -6,7 +6,8 @@ enum Routes {
   profile("/profile", "Profile"),
   editProfile("edit", "Edit_Profile"),
   editVehcile("vehicle", "Edit_Vehicle"),
-  contacts("/contacts", "Contacts"),
+  contacts("contacts", "Contacts"),
+  emergencyContacts("/emergency_contacts", "Emergency_Contacts"),
 
   /// will be inside the home page
   registerVehicle("register-vehicle", "Register_Vehicle"),

@@ -100,5 +100,11 @@
         "number": "Vehicle Number",
         "color": "Vehicle Color",
         "button": "SUBMIT"
+    },
+    "contacts":{
+        "title":"Select Emergency Contacts",
+        "hint":"Select 3 Emergency Contacts, Message will be sent to them",
+        "search":"Search Contacts",
+        "button":"SUBMIT"
     }
 }

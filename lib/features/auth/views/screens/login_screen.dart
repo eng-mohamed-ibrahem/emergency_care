@@ -1,11 +1,11 @@
-import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization/easy_localization.dart' hide TextDirection;
 import 'package:emergency_care/config/navigation/routes.dart';
 import 'package:emergency_care/config/themes/text_styles.dart';
 import 'package:emergency_care/core/constants/app_colors.dart';
 import 'package:emergency_care/core/constants/assets_manager.dart';
 import 'package:emergency_care/core/constants/validators.dart';
-import 'package:emergency_care/features/auth/views/widgets/main_button.dart';
 import 'package:emergency_care/core/utils/shared/input_form_field.dart';
+import 'package:emergency_care/features/auth/views/widgets/main_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,12 +41,41 @@ class _LoginScreenState extends State<LoginScreen> {
             key: _formKey,
             child: Column(
               children: [
-                RepaintBoundary(
-                  child: SvgPicture.asset(
-                    AssetsManager.loginSvgImage,
-                    width: 370.w,
-                    height: 310.h,
-                    fit: BoxFit.contain,
+                Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Stack(
+                    children: [
+                      RepaintBoundary(
+                        child: SvgPicture.asset(
+                          AssetsManager.loginSvgImage,
+                          width: 370.w,
+                          height: 310.h,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      TextButton.icon(
+                        onPressed: () {
+                          Locale currentLang =
+                              context.locale.languageCode == 'en'
+                                  ? Locale('ar')
+                                  : Locale('en');
+                          context.setLocale(currentLang);
+                        },
+                        label: Text(
+                          context.locale.languageCode == 'en'
+                              ? 'العربية'
+                              : 'English',
+                          style: TextStyles.subtitle.copyWith(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        icon: Icon(
+                          Icons.language_rounded,
+                          color: Colors.blue,
+                        ),
+                      )
+                    ],
                   ),
                 ),
 
@@ -118,11 +147,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     RichText(
                       text: TextSpan(
                         text: 'sign_in.new_member'.tr(),
-                        style: TextStyles.miniTitle,
+                        style: TextStyles.subtitle,
                         children: [
                           TextSpan(
                             text: 'sign_in.register'.tr(),
-                            style: TextStyles.miniTitle.copyWith(
+                            style: TextStyles.subtitle.copyWith(
                               color: AppColors.primaryColor,
                             ),
                             recognizer: TapGestureRecognizer()

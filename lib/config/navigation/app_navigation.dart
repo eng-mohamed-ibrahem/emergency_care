@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:emergency_care/config/navigation/pages.dart';
 import 'package:emergency_care/config/navigation/routes.dart';
+import 'package:emergency_care/core/dependency_injection/inject.dart';
+import 'package:emergency_care/core/service/cache_service/cache_service.dart';
 import 'package:emergency_care/features/main_shell/viewmodel/main_shell_viewmodel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -78,13 +80,30 @@ class AppNavigation {
             ],
           ),
           GoRoute(
-            path: Routes.contacts.path,
-            name: Routes.contacts.name,
+            path: Routes.emergencyContacts.path,
+            name: Routes.emergencyContacts.name,
             pageBuilder: (context, state) => pageBuilder(
               context,
               state,
-              ContactsScreen(),
+              EmergencyContactsScreen(),
             ),
+            redirect: (context, state) {
+              return inject<CacheService>().contacts.isEmpty
+                  ? state.namedLocation(Routes.contacts.name)
+                  : null;
+            },
+            routes: [
+              GoRoute(
+                path: Routes.contacts.path,
+                name: Routes.contacts.name,
+                parentNavigatorKey: _parentNavigatorKey,
+                pageBuilder: (context, state) => pageBuilder(
+                  context,
+                  state,
+                  ContactsScreen(),
+                ),
+              ),
+            ],
           ),
           GoRoute(
             path: Routes.profile.path,

@@ -39,7 +39,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   decoration: BoxDecoration(
                     color: Colors.blue.shade100,
                   ),
-                  alignment: Alignment.center,
+                  alignment: Alignment.bottomCenter,
                   child: Stack(
                     alignment: Alignment.bottomCenter,
                     children: [

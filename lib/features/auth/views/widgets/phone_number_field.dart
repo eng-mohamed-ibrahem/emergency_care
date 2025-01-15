@@ -51,7 +51,7 @@ class PhoneNumberField extends StatelessWidget {
           ),
         ),
       ),
-      onChanged: (phoneNumber) => print('changed into $phoneNumber'),
+      onChanged: onChanged,
       enabled: true,
       decoration: InputDecoration(
         hintText: "sign_up.phone".tr(),

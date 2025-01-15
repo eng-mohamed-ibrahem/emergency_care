@@ -32,32 +32,42 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: MediaQuery.sizeOf(context).height * 0.05,
               ),
               // Profile Picture
-              Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  CircleAvatar(
-                    radius: 60.r,
-                    backgroundColor: Colors.blue.shade100,
-                    child: CircleAvatar(
-                      radius: 58.r,
-                      backgroundImage: AssetImage(AssetsManager.avatar),
-                    ),
+              ClipOval(
+                child: Container(
+                  height: MediaQuery.sizeOf(context).height * 0.3,
+                  width: MediaQuery.sizeOf(context).width,
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade100,
                   ),
-                  PositionedDirectional(
-                    end: 0,
-                    bottom: 0,
-                    child: CircleAvatar(
-                      radius: 20.r,
-                      backgroundColor: Colors.white,
-                      child: IconButton(
-                        icon: SvgPicture.asset(
-                          AssetsManager.editPenIcon,
+                  alignment: Alignment.center,
+                  child: Stack(
+                    alignment: Alignment.bottomCenter,
+                    children: [
+                      CircleAvatar(
+                        radius: 60.r,
+                        backgroundColor: Colors.blue.shade100,
+                        child: CircleAvatar(
+                          radius: 58.r,
+                          backgroundImage: AssetImage(AssetsManager.avatar),
                         ),
-                        onPressed: () {},
                       ),
-                    ),
+                      PositionedDirectional(
+                        end: 0,
+                        bottom: 0,
+                        child: CircleAvatar(
+                          radius: 20.r,
+                          backgroundColor: Colors.white,
+                          child: IconButton(
+                            icon: SvgPicture.asset(
+                              AssetsManager.editPenIcon,
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
               SizedBox(
                 height: 16,

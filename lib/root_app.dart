@@ -4,6 +4,7 @@ import 'package:emergency_care/config/themes/app_theme.dart';
 import 'package:emergency_care/core/dependency_injection/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:phone_form_field/phone_form_field.dart';
 
 class RootApp extends StatelessWidget {
   const RootApp({super.key});
@@ -29,7 +30,10 @@ class RootApp extends StatelessWidget {
               },
               routerConfig: AppNavigation.router,
               debugShowCheckedModeBanner: false,
-              localizationsDelegates: context.localizationDelegates,
+              localizationsDelegates: [
+                ...context.localizationDelegates,
+                ...PhoneFieldLocalization.delegates,
+              ],
               supportedLocales: context.supportedLocales,
               locale: context.locale,
               theme: AppTheme.lightTheme,

@@ -1,0 +1,43 @@
+name: Flutter CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code 
+        uses: actions/checkout@v3
+
+      - name: setup flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.6.0"
+          channel: "stable"
+          cache: true
+    
+      - name: install dependencies
+        run: flutter pub get
+
+      - name: run analyzer
+        run: flutter analyze
+
+      - name: run tests
+        run: flutter test
+
+      - name: build APK
+        run: flutter build apk --release
+
+      - name: upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-apk
+          path: build/app/outputs/apk/release/app-release.apk

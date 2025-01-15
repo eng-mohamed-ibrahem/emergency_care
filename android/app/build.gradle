@@ -7,6 +7,13 @@ plugins {
 
 android {
     namespace = "com.example.emergency_care"
+    dependencies {
+        implementation project(':another_telephony') {
+            android {
+                namespace 'com.shounakmulay.telephony'
+            }
+        }
+    }
     compileSdk = 34
     ndkVersion = flutter.ndkVersion
 

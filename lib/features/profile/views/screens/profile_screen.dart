@@ -35,7 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ClipPath(
                 clipper: WaveClipper(),
                 child: Container(
-                  height: MediaQuery.sizeOf(context).height * 0.3,
+                  height: MediaQuery.sizeOf(context).height * 0.25,
                   width: MediaQuery.sizeOf(context).width,
                   decoration: BoxDecoration(
                     color: Colors.blue.shade100,

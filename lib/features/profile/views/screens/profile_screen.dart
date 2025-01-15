@@ -32,7 +32,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: MediaQuery.sizeOf(context).height * 0.05,
               ),
               // Profile Picture
-              ClipOval(
+              ClipPath(
+                clipper: WaveClipper(),
                 child: Container(
                   height: MediaQuery.sizeOf(context).height * 0.3,
                   width: MediaQuery.sizeOf(context).width,
@@ -182,26 +183,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 }
 
-class ProfileArc extends CustomPainter {
-  ProfileArc({required this.fillColor});
-  final Color fillColor;
+class WaveClipper extends CustomClipper<Path> {
   @override
-  void paint(Canvas canvas, Size size) {
-    var paint = Paint()
-      ..color = fillColor
-      ..style = PaintingStyle.fill;
+  Path getClip(Size size) {
     var path = Path();
-    path.moveTo(0, 0);
-    path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height / 2);
-    path.arcToPoint(Offset(0, size.height / 2),
-        radius: const Radius.circular(10), largeArc: true);
+
+    // Start at top-left
+    path.lineTo(0, 0);
+
+    // Create the wave
+    var firstControlPoint = Offset(size.width / 4, size.height / 4);
+    var firstEndPoint = Offset(size.width / 2, size.height / 4);
+    path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
+        firstEndPoint.dx, firstEndPoint.dy);
+
+    var secondControlPoint =
+        Offset(size.width - (size.width / 4), size.height / 4);
+    var secondEndPoint = Offset(size.width, 0);
+    path.quadraticBezierTo(secondControlPoint.dx, secondControlPoint.dy,
+        secondEndPoint.dx, secondEndPoint.dy);
+
+    // Complete the rectangle
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
     path.close();
-    canvas.drawPath(path, paint);
+
+    return path;
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

@@ -24,159 +24,160 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: MediaQuery.sizeOf(context).height * 0.05,
-              ),
-              // Profile Picture
-              ClipPath(
-                clipper: WaveClipper(),
-                child: Container(
-                  height: MediaQuery.sizeOf(context).height * 0.25,
-                  width: MediaQuery.sizeOf(context).width,
-                  decoration: BoxDecoration(
-                    color: Colors.blue.shade100,
-                  ),
-                  alignment: Alignment.bottomCenter,
-                  child: Stack(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Profile Picture
+            Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                ClipPath(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  clipper: WaveClipper(),
+                  child: Container(
+                    height: MediaQuery.sizeOf(context).height * 0.28,
+                    width: MediaQuery.sizeOf(context).width,
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade100,
+                    ),
                     alignment: Alignment.bottomCenter,
-                    children: [
-                      CircleAvatar(
-                        radius: 60.r,
-                        backgroundColor: Colors.blue.shade100,
-                        child: CircleAvatar(
-                          radius: 58.r,
-                          backgroundImage: AssetImage(AssetsManager.avatar),
-                        ),
+                    // child:
+                  ),
+                ),
+                Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    CircleAvatar(
+                      radius: 60.r,
+                      backgroundColor: Colors.blue.shade100,
+                      child: CircleAvatar(
+                        radius: 58.r,
+                        backgroundImage: AssetImage(AssetsManager.avatar),
                       ),
-                      PositionedDirectional(
-                        end: 0,
-                        bottom: 0,
-                        child: CircleAvatar(
-                          radius: 20.r,
-                          backgroundColor: Colors.white,
-                          child: IconButton(
-                            icon: SvgPicture.asset(
-                              AssetsManager.editPenIcon,
-                            ),
-                            onPressed: () {},
+                    ),
+                    Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: CircleAvatar(
+                        radius: 20.r,
+                        backgroundColor: Colors.white,
+                        child: IconButton(
+                          icon: SvgPicture.asset(
+                            AssetsManager.editPenIcon,
                           ),
+                          onPressed: () {},
                         ),
                       ),
-                    ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            // Profile Name and Email
+            Text(
+              'Mohamed Ibrahem',
+              textAlign: TextAlign.center,
+              style: TextStyles.middleTitle.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'mohamed.data13@gmail.com | +20 1275314934',
+              textAlign: TextAlign.center,
+              style: TextStyles.subtitle,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            // First Settings Group
+            SettingsCard(
+              children: [
+                SettingsTile(
+                  leadingIcon: SvgPicture.asset(AssetsManager.profileEditIcon),
+                  title: 'profile.edit'.tr(),
+                  onTap: () {
+                    context.goNamed(Routes.editProfile.name);
+                  },
+                ),
+                SettingsTile(
+                  leadingIcon: SvgPicture.asset(AssetsManager.languageIcon),
+                  title: 'profile.lang'.tr(),
+                  trailing: TextButton(
+                    onPressed: () {
+                      Locale currentLang = context.locale.languageCode == 'en'
+                          ? Locale('ar')
+                          : Locale('en');
+                      context
+                          .read<MainShellViewmodel>()
+                          .changeLanguage(currentLang);
+                      context.setLocale(currentLang);
+                    },
+                    child: Text(
+                      context.locale.languageCode == 'en'
+                          ? 'العربية'
+                          : 'English',
+                      style: TextStyles.subtitle.copyWith(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              // Profile Name and Email
-              Text(
-                'Mohamed Ibrahem',
-                textAlign: TextAlign.center,
-                style: TextStyles.middleTitle.copyWith(
-                  fontWeight: FontWeight.bold,
+              ],
+            ),
+            // Second Settings Group
+            SettingsCard(
+              children: [
+                SettingsTile(
+                  leadingIcon: SvgPicture.asset(AssetsManager.vehicleIcon),
+                  title: 'profile.vehicle'.tr(),
+                  onTap: () {
+                    context.goNamed(Routes.editVehcile.name);
+                  },
                 ),
-              ),
-              Text(
-                'mohamed.data13@gmail.com | +20 1275314934',
-                textAlign: TextAlign.center,
-                style: TextStyles.subtitle,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              // First Settings Group
-              SettingsCard(
-                children: [
-                  SettingsTile(
-                    leadingIcon:
-                        SvgPicture.asset(AssetsManager.profileEditIcon),
-                    title: 'profile.edit'.tr(),
-                    onTap: () {
-                      context.goNamed(Routes.editProfile.name);
-                    },
-                  ),
-                  SettingsTile(
-                    leadingIcon: SvgPicture.asset(AssetsManager.languageIcon),
-                    title: 'profile.lang'.tr(),
-                    trailing: TextButton(
-                      onPressed: () {
-                        Locale currentLang = context.locale.languageCode == 'en'
-                            ? Locale('ar')
-                            : Locale('en');
-                        context
-                            .read<MainShellViewmodel>()
-                            .changeLanguage(currentLang);
-                        context.setLocale(currentLang);
-                      },
-                      child: Text(
-                        context.locale.languageCode == 'en'
-                            ? 'العربية'
-                            : 'English',
-                        style: TextStyles.subtitle.copyWith(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                        ),
+                SettingsTile(
+                  leadingIcon: SvgPicture.asset(AssetsManager.themeIcon),
+                  title: 'profile.theme'.tr(),
+                  trailing: TextButton(
+                    onPressed: null,
+                    child: Text(
+                      'profile.mode'.tr(),
+                      style: TextStyles.subtitle.copyWith(
+                        color: Colors.blue.shade200,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                ],
-              ),
-              // Second Settings Group
-              SettingsCard(
-                children: [
-                  SettingsTile(
-                    leadingIcon: SvgPicture.asset(AssetsManager.vehicleIcon),
-                    title: 'profile.vehicle'.tr(),
-                    onTap: () {
-                      context.goNamed(Routes.editVehcile.name);
-                    },
+                ),
+              ],
+            ),
+            // Third Settings Group
+            SettingsCard(
+              children: [
+                SettingsTile(
+                  leadingIcon: SvgPicture.asset(AssetsManager.privacyPolicy),
+                  title: 'profile.privacy'.tr(),
+                ),
+                SettingsTile(
+                  leadingIcon: Icon(
+                    Icons.logout,
+                    color: AppColors.primaryColor,
                   ),
-                  SettingsTile(
-                    leadingIcon: SvgPicture.asset(AssetsManager.themeIcon),
-                    title: 'profile.theme'.tr(),
-                    trailing: TextButton(
-                      onPressed: null,
-                      child: Text(
-                        'profile.mode'.tr(),
-                        style: TextStyles.subtitle.copyWith(
-                          color: Colors.blue.shade200,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
+                  title: 'profile.logout'.tr(),
+                  titleStyle: TextStyles.subtitle.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.primaryColor,
                   ),
-                ],
-              ),
-              // Third Settings Group
-              SettingsCard(
-                children: [
-                  SettingsTile(
-                    leadingIcon: SvgPicture.asset(AssetsManager.privacyPolicy),
-                    title: 'profile.privacy'.tr(),
-                  ),
-                  SettingsTile(
-                    leadingIcon: Icon(
-                      Icons.logout,
-                      color: AppColors.primaryColor,
-                    ),
-                    title: 'profile.logout'.tr(),
-                    titleStyle: TextStyles.subtitle.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.primaryColor,
-                    ),
-                    onTap: () {
-                      // handle logout
-                    },
-                  ),
-                ],
-              ),
-            ],
-          ),
+                  onTap: () {
+                    // handle logout
+                  },
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -187,25 +188,27 @@ class WaveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = Path();
+    // Start at top-left and draw straight line to bottom-left
+    path.lineTo(0, size.height * 0.75); // Move starting point down
 
-    // Start at top-left
-    path.lineTo(0, 0);
-
-    // Create the wave
-    var firstControlPoint = Offset(size.width / 4, size.height / 4);
-    var firstEndPoint = Offset(size.width / 2, size.height / 4);
+    // Create the wave at bottom
+    var firstControlPoint =
+        Offset(size.width / 4, size.height * 0.8); // Move control point down
+    var firstEndPoint =
+        Offset(size.width / 2, size.height * 0.75); // Move end point down
     path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
         firstEndPoint.dx, firstEndPoint.dy);
 
     var secondControlPoint =
-        Offset(size.width - (size.width / 4), size.height / 4);
-    var secondEndPoint = Offset(size.width, 0);
+        Offset(size.width * 0.75, size.height * 0.7); // Move control point down
+    var secondEndPoint =
+        Offset(size.width, size.height * 0.75); // Move end point down
     path.quadraticBezierTo(secondControlPoint.dx, secondControlPoint.dy,
         secondEndPoint.dx, secondEndPoint.dy);
 
-    // Complete the rectangle
-    path.lineTo(size.width, size.height);
-    path.lineTo(0, size.height);
+    // Complete the path
+    path.lineTo(size.width, 0); // Draw line to top-right
+    path.lineTo(0, 0); // Draw line to top-left
     path.close();
 
     return path;

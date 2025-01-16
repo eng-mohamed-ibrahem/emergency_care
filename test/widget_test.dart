@@ -5,25 +5,26 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:emergency_care/root_app.dart';
-import 'package:flutter/material.dart';
+import 'package:emergency_care/features/auth/views/screens/login_screen.dart';
+import 'package:emergency_care/features/splash/views/splash.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Verify that login screen is loaded after splash screen',
+      (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const RootApp());
+    // await tester.pumpWidget(const RootApp());
+    await tester.pumpAndSettle();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that the Splash screen is initially displayed.
+    expect(find.byType(Splash), findsOneWidget);
+    expect(find.byType(LoginScreen), findsNothing);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // Wait for the splash screen to complete its logic (e.g., navigation).
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that the Splash screen is removed and the Login screen is displayed.
+    expect(find.byType(Splash), findsNothing);
+    expect(find.byType(LoginScreen), findsOneWidget);
   });
 }

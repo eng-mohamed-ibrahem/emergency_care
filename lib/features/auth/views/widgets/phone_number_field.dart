@@ -36,7 +36,6 @@ class PhoneNumberField extends StatelessWidget {
       countrySelectorNavigator: CountrySelectorNavigator.draggableBottomSheet(
         searchBoxTextStyle: TextStyles.subtitle,
         borderRadius: BorderRadius.circular(12),
-        backgroundColor: Colors.white,
         searchBoxDecoration: InputDecoration(
           hintText: 'sign_up.search'.tr(),
           filled: true,

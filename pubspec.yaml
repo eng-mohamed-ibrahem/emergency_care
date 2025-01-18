@@ -1,8 +1,6 @@
 name: emergency_care
-description: "Emergency Care App"
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+description: "Emergency Care Mobile Application"
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -16,10 +14,10 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   fast_contacts: ^4.0.0
-  another_telephony:
-    git:
-      url: https://github.com/eng-mohamed-ibrahem/another_telephony.git
-      ref: develop
+  another_telephony: ^0.3.0
+    # git:
+    #   url: https://github.com/eng-mohamed-ibrahem/another_telephony.git
+    #   ref: develop
   flutter_bloc: ^8.1.6
   get_it: ^8.0.3
   logger: ^2.5.0

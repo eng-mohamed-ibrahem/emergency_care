@@ -16,6 +16,22 @@
 default_platform(:android)
 
 platform :android do
-  
-  
+  desc "distribution android apk"
+  lane:firebase_distribution do
+    # gradle(task: "assembleRelease")
+    # sh "flutter clean"
+    # sh "flutter build apk --release"
+    build_android_app(
+        task: "assemble",
+        build_type: "Release"
+    )
+    release = firebase_app_distribution(
+        app: "1:91302037395:android:d6ce1258d6e6ddde988a66",
+        android_artifact_type: "apk",
+        firebase_cli_token: "1//03vtS0CvAZa01CgYIARAAGAMSNwF-L9IrmRtyBEc1qPdHEBMYwUAiRs0Ondz0BZyFoAz7BThzztH_IYwf6T-ih4q8XOZIZEbyG9U",
+        android_artifact_path: "../build/app/outputs/apk/release/app-release.apk",
+        testers: "mohamed.data13@gmail.com, hhhagermohamed123@gmail.com",
+        release_notes: "The First Release of Android App using Fastlane"
+    )
+  end
 end

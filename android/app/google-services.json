@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "91302037395",
+    "project_id": "fir-session-d1160",
+    "storage_bucket": "fir-session-d1160.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91302037395:android:5ee4559917a22b3d988a66",
+        "android_client_info": {
+          "package_name": "com.example.firebase_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtunxVECshHGZ85YnmIPI9ZHakaMAofQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91302037395:android:d6ce1258d6e6ddde988a66",
+        "android_client_info": {
+          "package_name": "com.mohamedibrahem.emergeny_care"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtunxVECshHGZ85YnmIPI9ZHakaMAofQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,6 +7,9 @@ This is the README file for the Emergency Care application. This application is 
 ## Features
 
 - Quick access to emergency services
+- Message sending feature
+- Calling making feature
+- Location tracking feature
 - User-friendly interface
 - Real-time updates and notifications
 
